@@ -38,7 +38,8 @@ class Register extends StatelessWidget {
             decoration: InputDecoration(
               // border: OutlineInputBorder(),
               labelText: 'Username',
-              hintText: 'Enter your username',
+              // hintText: 'Enter your username',
+              icon: Icon(Icons.person),
             ),
           ),
         ),
@@ -50,7 +51,9 @@ class Register extends StatelessWidget {
             decoration: InputDecoration(
                 // border: OutlineInputBorder(),
                 labelText: 'Email',
-                hintText: 'Enter your email'),
+                // hintText: 'Enter your email',
+                 icon: Icon(Icons.email),
+            ),
           ),
         ),
         Padding(
@@ -63,7 +66,8 @@ class Register extends StatelessWidget {
             decoration: InputDecoration(
               // border: OutlineInputBorder(),
               labelText: 'Password',
-              hintText: 'Enter your password',
+              // hintText: 'Enter your password',
+                icon: Icon(Icons.lock),
             ),
           ),
         ),
@@ -73,11 +77,12 @@ class Register extends StatelessWidget {
            padding: EdgeInsets.symmetric(horizontal: 50),
           child: TextField(
             keyboardType: TextInputType.visiblePassword,
-            // obscureText: true,
+            obscureText: true,
             decoration: InputDecoration(
               // border: OutlineInputBorder(),
               labelText: 'Confirm Password',
-              hintText: 'Confirm your password',
+              // hintText: 'Confirm your password',
+                icon: Icon(Icons.lock),
             ),
           ),
         ),
@@ -102,14 +107,12 @@ class Register extends StatelessWidget {
                   context, MaterialPageRoute(builder: (_) => Login()));
             },
             child: Text(
-              'REGISTER',
+              'Register',
               style: TextStyle(color: Colors.white, fontSize: 15),
             ),
           ),
         ),
-        SizedBox(
-          height: 130,
-        ),
+       
       ],
     ),
     );
