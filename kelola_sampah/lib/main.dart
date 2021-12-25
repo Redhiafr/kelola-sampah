@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:kelola_sampah/Screens/categories.dart';
-import 'package:kelola_sampah/Screens/transacations.dart';
 import 'package:kelola_sampah/Screens/login.dart';
 import 'package:kelola_sampah/Screens/register.dart';
 import 'package:kelola_sampah/Screens/home.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => Register(),
         '/categories': (context) => Categories(),
         '/home': (context) => Home(),
-         '/transactions': (context) => Transactions(),
+        //  '/transactions': (context) => Transactions(),
       },
     );
   }
