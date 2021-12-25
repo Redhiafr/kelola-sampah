@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelola_sampah/Screens/home.dart';
-import 'package:kelola_sampah/Screens/transacations.dart';
+
 import 'package:kelola_sampah/Screens/register.dart';
 
 class Login extends StatelessWidget {
@@ -38,7 +38,9 @@ class Login extends StatelessWidget {
               decoration: InputDecoration(
                   // border: OutlineInputBorder(),
                   labelText: 'Email',
-                  hintText: 'Enter your email'),
+                  // hintText: 'Enter your email',
+                    icon: Icon(Icons.person),
+              ),
             ),
           ),
           Padding(
@@ -51,7 +53,8 @@ class Login extends StatelessWidget {
               decoration: InputDecoration(
                 // border: OutlineInputBorder(),
                 labelText: 'Password',
-                hintText: 'Enter your password',
+                // hintText: 'Enter your password',
+                  icon: Icon(Icons.lock),
               ),
             ),
           ),
@@ -60,16 +63,7 @@ class Login extends StatelessWidget {
             child: Text(
               'Lupa Password',
               style: TextStyle(color: Colors.blue, fontSize: 15),
-            ),
-          ),
-          FlatButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Register()));
-            },
-            child: Text(
-              'Dont Have Account?',
-              style: TextStyle(color: Colors.blue, fontSize: 15),
+              
             ),
           ),
           Container(
@@ -83,14 +77,29 @@ class Login extends StatelessWidget {
                     context, MaterialPageRoute(builder: (_) => Home()));
               },
               child: Text(
-                'MASUK',
+                'Sign In',
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),
           ),
-          SizedBox(
-            height: 100,
+           Container(
+             margin: EdgeInsets.all(9),
+            height: 45,
+            width: 200,
+            decoration: BoxDecoration(color: Colors.teal.shade700),
+            // borderRadius: BorderRadius.circular(20)),
+            child: FlatButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Register()));
+              },
+              child: Text(
+                'Register',
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+            ),
           ),
+        
         ],
       ),
     );
