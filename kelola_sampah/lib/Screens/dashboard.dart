@@ -4,12 +4,10 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kelola_sampah/Screens/kategori.dart';
-import 'package:kelola_sampah/Screens/daftar_sukarela.dart';
-import 'package:kelola_sampah/Screens/kategori.dart';
+import 'package:kelola_sampah/Screens/volunteers.dart';
 import 'package:kelola_sampah/Screens/riwayat.dart';
 import 'package:kelola_sampah/Screens/transaksi.dart';
 import 'package:kelola_sampah/constants.dart';
-
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
