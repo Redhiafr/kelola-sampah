@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
             child: FlatButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Home()));
+                    context, MaterialPageRoute(builder: (_) => HomePage()));
               },
               child: Text(
                 'Sign In',
