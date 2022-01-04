@@ -36,10 +36,10 @@ class Login extends StatelessWidget {
             child: TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                  // border: OutlineInputBorder(),
-                  labelText: 'Email',
-                  // hintText: 'Enter your email',
-                    icon: Icon(Icons.person),
+                // border: OutlineInputBorder(),
+                labelText: 'Email',
+                // hintText: 'Enter your email',
+                icon: Icon(Icons.person),
               ),
             ),
           ),
@@ -54,7 +54,7 @@ class Login extends StatelessWidget {
                 // border: OutlineInputBorder(),
                 labelText: 'Password',
                 // hintText: 'Enter your password',
-                  icon: Icon(Icons.lock),
+                icon: Icon(Icons.lock),
               ),
             ),
           ),
@@ -63,7 +63,6 @@ class Login extends StatelessWidget {
             child: Text(
               'Lupa Password',
               style: TextStyle(color: Colors.blue, fontSize: 15),
-              
             ),
           ),
           Container(
@@ -82,8 +81,8 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-           Container(
-             margin: EdgeInsets.all(9),
+          Container(
+            margin: EdgeInsets.all(9),
             height: 45,
             width: 200,
             decoration: BoxDecoration(color: Colors.teal.shade700),
@@ -99,7 +98,6 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-        
         ],
       ),
     );

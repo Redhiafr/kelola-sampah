@@ -8,12 +8,10 @@ import 'package:flutter/painting.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:kelola_sampah/global/global_constant.dart';
 import 'package:kelola_sampah/Screens/bottomModal_success.dart';
 import 'package:kelola_sampah/Screens/home.dart';
 import 'package:kelola_sampah/constants.dart';
-
-import 'home.dart';
+import 'package:kelola_sampah/global/global_constant.dart';
 
 class Transaksi extends StatefulWidget {
   const Transaksi({Key? key}) : super(key: key);

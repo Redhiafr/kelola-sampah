@@ -1,28 +1,18 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:kelola_sampah/constants.dart';
-
 import 'package:kelola_sampah/Screens/dashboard.dart';
 import 'package:kelola_sampah/Screens/myprofile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  //  @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     backgroundColor: Colors.white,
-  //     appBar: buildAppbar(),
-  //     body: Body(),
-  //   );
-  // }
-
-    @override
+  @override
   _HomePageState createState() => _HomePageState();
 }
 
- class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   List<Widget> _widgetlist = [Dashboard(), MyProfile()];
 

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:kelolasampah/Screens/tambah_kategori.dart';
-import 'package:kelolasampah/components/header_with_searchbox.dart';
-import 'package:kelolasampah/constants.dart';
+import 'package:kelola_sampah/constants.dart';
+import 'package:kelola_sampah/Screens/tambah_kategori.dart';
+import 'package:kelola_sampah/components/header_with_searchbox.dart';
 
 class Kategori extends StatefulWidget {
   const Kategori({Key? key}) : super(key: key);

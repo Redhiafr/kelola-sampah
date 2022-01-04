@@ -1,11 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:kelola_sampah/Screens/kategori.dart';
-import 'package:kelola_sampah/Screens/login.dart';
-import 'package:kelola_sampah/Screens/register.dart';
 import 'package:kelola_sampah/Screens/home.dart';
-import 'package:kelola_sampah/Screens/volunteers.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -15,10 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     title: 'Flutter Demo',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      ), 
+      ),
       home: HomePage(),
     );
   }

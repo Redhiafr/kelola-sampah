@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kelolasampah/constants.dart';
+import 'package:kelola_sampah/constants.dart';
 import 'package:http/http.dart' as http;
-import 'package:kelolasampah/global/global_constant.dart';
+import 'package:kelola_sampah/global/global_constant.dart';
 
 class Riwayat extends StatefulWidget {
   const Riwayat({Key? key}) : super(key: key);

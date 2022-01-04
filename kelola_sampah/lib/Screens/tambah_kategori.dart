@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kelolasampah/constants.dart';
+import 'package:kelola_sampah/constants.dart';
 
 class TambahKategori extends StatefulWidget {
   const TambahKategori({Key? key}) : super(key: key);
@@ -10,6 +10,8 @@ class TambahKategori extends StatefulWidget {
 }
 
 class _TambahKategoriState extends State<TambahKategori> {
+  get kPrimaryColor => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,15 +52,15 @@ class _TambahKategoriState extends State<TambahKategori> {
                     )
                   ],
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Berat (kg)'),
-                    TextField(
-                      decoration: InputDecoration(hintText: 'ex. Plastik'),
-                    )
-                  ],
-                )
+                // Column(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Text('Berat (kg)'),
+                //     TextField(
+                //       decoration: InputDecoration(hintText: 'ex. Plastik'),
+                //     )
+                //   ],
+                // )
               ],
             ),
             TextButton(

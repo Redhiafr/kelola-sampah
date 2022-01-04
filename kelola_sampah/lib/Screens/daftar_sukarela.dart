@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
-import 'package:kelolasampah/Screens/bottomModal_success.dart';
-import 'package:kelolasampah/Screens/dashboard.dart';
-import 'package:kelolasampah/Screens/home.dart';
-import 'package:kelolasampah/global/global_constant.dart';
+import 'package:kelola_sampah/Screens/bottomModal_success.dart';
+import 'package:kelola_sampah/Screens/dashboard.dart';
+import 'package:kelola_sampah/Screens/home.dart';
+import 'package:kelola_sampah/global/global_constant.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import 'package:kelolasampah/constants.dart';
+import 'package:kelola_sampah/constants.dart';
 
 class DaftarSukarela extends StatefulWidget {
   const DaftarSukarela({Key? key}) : super(key: key);
