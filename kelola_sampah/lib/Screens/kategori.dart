@@ -1,9 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:kelola_sampah/constants.dart';
 import 'package:kelola_sampah/Screens/tambah_kategori.dart';
 import 'package:kelola_sampah/components/header_with_searchbox.dart';
+import 'package:kelola_sampah/constants.dart';
+import 'package:http/http.dart' as http;
+import 'package:kelola_sampah/global/global_constant.dart';
 
 class Kategori extends StatefulWidget {
   const Kategori({Key? key}) : super(key: key);
@@ -14,6 +19,32 @@ class Kategori extends StatefulWidget {
 
 class _KategoriState extends State<Kategori> {
   List data = ['Coba', 'Coba', 'Coba', 'Coba'];
+  List katList = [];
+
+  Future _getCategory() async {
+    var url = Uri.parse(GlobalConstant().url + '/api/categories');
+    var response = await http.get(url);
+    Map result = json.decode(response.body);
+    // print(result['data']);
+    if (response.statusCode == 200) {
+      setState(() {
+        katList = result['data'];
+      });
+    } else {
+      setState(() {
+        katList = [];
+      });
+    }
+    // return katList;
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getCategory();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +62,7 @@ class _KategoriState extends State<Kategori> {
         Padding(
           padding: const EdgeInsets.only(top: 40),
           child: GridView.builder(
-            itemCount: data.length,
+            itemCount: katList.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount:
                     (MediaQuery.of(context).orientation == Orientation.portrait)
@@ -54,7 +85,7 @@ class _KategoriState extends State<Kategori> {
                                   BorderRadius.all(Radius.circular(16)),
                               color: Colors.white,
                             ),
-                            child: Center(child: Text('Coba')),
+                            child: Center(child: Text(katList[index]['name'])),
                           ),
                         );
                       },
@@ -77,7 +108,7 @@ class _KategoriState extends State<Kategori> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
                                     child: Text(
-                                  data[index].toString(),
+                                  katList[index]['name'].toString(),
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),

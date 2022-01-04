@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:kelola_sampah/Screens/bottomModal_success.dart';
+import 'package:kelola_sampah/Screens/bottomModal_failed.dart';
+import 'package:kelola_sampah/Screens/kategori.dart';
 import 'package:kelola_sampah/constants.dart';
+import 'package:kelola_sampah/global/global_constant.dart';
 
 class TambahKategori extends StatefulWidget {
   const TambahKategori({Key? key}) : super(key: key);
@@ -10,7 +15,30 @@ class TambahKategori extends StatefulWidget {
 }
 
 class _TambahKategoriState extends State<TambahKategori> {
-  get kPrimaryColor => null;
+  TextEditingController _name = new TextEditingController();
+  TextEditingController _desc = new TextEditingController();
+  Future _submit() async {
+    var url = Uri.parse(GlobalConstant().url + '/api/categories');
+
+    Map<String, String> reqs = <String, String>{
+      "name": _name.text,
+      "description": _desc.text
+    };
+
+    var response = await http.post(url, body: reqs);
+    print(response.statusCode);
+    if (response.statusCode == 201) {
+      BottomModalSuccess.success(context);
+      Future.delayed(const Duration(seconds: 2), () {
+        Navigator.pop(context);
+      });
+      Future.delayed(Duration(seconds: 3), () {
+        Navigator.pop(context);
+      });
+    } else {
+      BottomModalFailed.failed(context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +65,7 @@ class _TambahKategoriState extends State<TambahKategori> {
                   children: [
                     Text('Nama Kategori'),
                     TextField(
+                      controller: _name,
                       decoration: InputDecoration(hintText: 'ex. Plastik'),
                     )
                   ],
@@ -46,6 +75,7 @@ class _TambahKategoriState extends State<TambahKategori> {
                   children: [
                     Text('Deskripsi'),
                     TextField(
+                      controller: _desc,
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       decoration: InputDecoration(hintText: 'ex. Plastik'),
@@ -64,7 +94,9 @@ class _TambahKategoriState extends State<TambahKategori> {
               ],
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                _submit();
+              },
               style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
               child: Text(
                 'Upload',
